@@ -1,0 +1,395 @@
+body {
+	 overflow-X:hidden;
+}
+
+.jumbotron
+{
+	background: #000 url("http://filidatravel.hr/wp-content/uploads/2016/08/jajce-3.jpg") center center;
+	background-size: cover;
+	height: auto;
+	margin-bottom:56px;
+}
+#meni-font
+{
+	color:white;
+	font-size:15px;
+
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: black;
+	border-radius: 15px 15px 15px 15px;
+	
+
+    
+}
+.site-header
+{
+	position: relative;
+}
+
+.dropdown-menu
+{
+	background-color: white;
+	padding:0px 0px;
+}
+/*
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+*/
+
+
+
+.dropdown.dropdown-lg .dropdown-menu {
+ 
+    margin-top: -1px;
+	border-radius: 15px 15px 15px 15px;
+    padding: 4px 15px;
+ 
+}
+ 
+
+ 
+.btn-group .btn {
+ 
+    border-radius: 0;
+ 
+    margin-left: -1px;
+ 
+}
+ 
+.form-horizontal .form-group {
+ 
+    margin-left: 0;
+ 
+    margin-right: 0;
+ 
+}
+ 
+
+ 
+.search-box-style {
+ 
+    padding: 9px;
+ 
+    border: solid 1px #408080;
+ 
+    outline: 0;
+ 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF));
+ 
+    background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px);
+ 
+    box-shadow: rgba(0,64,64, 0.3) 0px 0px 8px;
+ 
+    -moz-box-shadow: rgba(0,64,64, 0.3) 0px 0px 8px;
+ 
+    -webkit-box-shadow: rgba(0,64,64, 0.3) 0px 0px 8px;
+ 
+ 
+ 
+    } 
+ 
+@media screen and (min-width: 768px) {
+ 
+    #boot-search-box {
+ 
+        width: 500px;
+ 
+        margin: 0 auto;
+ 
+    }
+ 
+    .dropdown.dropdown-lg {
+ 
+        position: static !important;
+ 
+    }
+ 
+    .dropdown.dropdown-lg .dropdown-menu {
+ 
+        min-width: 500px;
+		background-color: white;
+ 
+    }
+	
+
+}
+/*   */
+
+
+
+.carousel-inner > .item > img{
+       width:640px;
+       height:360px;
+     }
+
+
+
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 63px;
+    color: white;
+}
+.jumbotron p
+{
+	color: white;
+}
+.meni
+{
+	opacity: 0.6;	
+}
+.btn btn-primary dropdown-toggle
+{
+	border: 5px solid white;
+}
+
+.footertext-red 
+{
+  color: red;
+  font-size:25px;
+}
+
+img
+{
+	border-radius: 15px 15px 15px 15px;
+}
+
+#myCarousel{
+	margin-top: 1%;
+	margin-bottom: : 5%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+input#username{
+	background-image:url(https://cdn0.iconfinder.com/data/icons/users-android-l-lollipop-icon-pack/24/user-128.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:2px;
+	border:1px solid #DADADA;
+	margin-top:10px;
+	padding-left:35px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	box-shadow:0 0 10px;
+	-webkit-box-shadow:0 0 10px;
+	/* For I.E */
+	-moz-box-shadow:0 0 10px;
+	/* For Mozilla Web Browser*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	/* For I.E */
+	-moz-border-radius:5px
+	/* For Mozilla Web Browser*/
+}
+
+input#password{
+
+	background-image:url(https://cdn0.iconfinder.com/data/icons/iconico-3/1024/40.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:2px;
+	border:1px solid #DADADA;
+	margin-top:10px;
+	padding-left:35px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	box-shadow:0 0 10px;
+	-webkit-box-shadow:0 0 10px;
+	/* For I.E */
+	-moz-box-shadow:0 0 10px;
+	/* For Mozilla Web Browser*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	/* For I.E */
+	-moz-border-radius:5px
+	/* For Mozilla Web Browser*/
+}
+
+input#first-name, #last-name, #birth-date{
+	border:1px solid #DADADA;
+	margin-top:10px;
+	padding-left:35px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	box-shadow:0 0 10px;
+	-webkit-box-shadow:0 0 10px;
+	/* For I.E */
+	-moz-box-shadow:0 0 10px;
+	/* For Mozilla Web Browser*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	/* For I.E */
+	-moz-border-radius:5px
+	/* For Mozilla Web Browser*/
+}
+#lbl-birth-date{
+	margin-top:10px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+}
+#birth-date{
+	border:1px solid #DADADA;
+	margin-top:-2px;
+	padding-left:35px;
+	width:100%;
+	height:100%;
+	font-size:14px;
+	box-shadow:0 0 10px;
+	-webkit-box-shadow:0 0 10px;
+	/* For I.E */
+	-moz-box-shadow:0 0 10px;
+	/* For Mozilla Web Browser*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	/* For I.E */
+	-moz-border-radius:5px
+	/* For Mozilla Web Browser*/
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+#pretraga{
+	position:absolute;
+	bottom: 0 ;
+	transform: translateY(50%);
+	margin-bottom:20px;
+
+}
+
+#navigacija
+{
+   
+	top:  0 ;
+
+}
+
+#username
+{
+   
+	background-color:white;
+
+}
+
+#navbar-span
+{
+	background-color:white;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#navbar-span:hover
+{
+	box-shadow:0 0 20px;
+}
+
+
+#footer {
+  
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: auto;
+  background: 
+  /* color overlay */ 
+    
+    /* image to overlay */
+    url(background.jpg);
+}
+
+
+
+
+
+
+/* Custom footer CSS
+-------------------------------------------------- */
+
+
+.container .text-muted {
+  margin: 20px 0;
+}
+.footertext {
+  color: black;
+  font-size:25px;
+}
+   
+
+.zoom {      
+-webkit-transition: all 0.35s ease-in-out;    
+-moz-transition: all 0.35s ease-in-out;    
+transition: all 0.35s ease-in-out;     
+cursor: -webkit-zoom-in;      
+cursor: -moz-zoom-in;      
+cursor: zoom-in;  
+}     
+
+.zoom:hover,  
+.zoom:active,   
+.zoom:focus {
+/**adjust scale to desired size, 
+add browser prefixes**/
+-ms-transform: scale(2.5);    
+-moz-transform: scale(2.5);  
+-webkit-transform: scale(2.5);  
+-o-transform: scale(2.5);  
+transform: scale(2.5);    
+position:relative;      
+z-index:100;  
+}
+
+/**To keep upscaled images visible on mobile, 
+increase left & right margins a bit**/  
+@media only screen and (max-width: 768px) {   
+
+/**TIP: Easy escape for touch screens,
+give gallery's parent container a cursor: pointer.**/
+.DivName {cursor: pointer}
+}
+
+.thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
