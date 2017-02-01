@@ -8,17 +8,19 @@ body {
 	background-size: cover;
 	height: auto;
 	margin-bottom:56px;
+	padding-bottom:10px;
 }
 #meni-font
 {
 	color:white;
 	font-size:15px;
-
+	text-shadow: -1px 0 grey, 0 2px grey, 2px 0 grey, 0 -1px grey;
 }
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
     background-color: black;
 	border-radius: 15px 15px 15px 15px;
+
 	
 
     
@@ -155,6 +157,7 @@ body {
 .jumbotron .h1, .jumbotron h1 {
     font-size: 63px;
     color: white;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .jumbotron p
 {
@@ -251,6 +254,26 @@ input#first-name, #last-name, #birth-date{
 	-moz-border-radius:5px
 	/* For Mozilla Web Browser*/
 }
+
+input#loginAndRegister-btn{
+	border: 1px solid #DADADA;
+    margin-top: 5%;
+    margin-bottom: 5px;
+    margin-left: 25%;
+    padding-left: 10px;
+    width: 50%;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    -moz-box-shadow: 0 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px
+ /* For Mozilla Web Browser*/;
+}
+
+
+
 #lbl-birth-date{
 	margin-top:10px;
 	width:100%;
@@ -307,8 +330,8 @@ html {
 
 #navbar-span
 {
-	background-color:white;
-	border: 2px solid black;
+	background-color:maroon;
+	border: 2px solid white;
 	border-radius: 5px 5px 5px 5px;
 }
 
@@ -328,6 +351,37 @@ html {
     
     /* image to overlay */
     url(background.jpg);
+}
+
+#page_links
+{
+ font-family: arial, verdana;
+ font-size: 12px;
+ border:2px #a00000 solid;
+ padding: 6px;
+ margin: 3px;
+ background-color: #cccccc;
+ text-decoration: none;
+}
+#page_a_link
+{
+ font-family: arial, verdana;
+ font-size: 12px;
+ border:2px ##a00000 solid;
+ color: #000000;
+ background-color: #cccccc;
+ padding: 6px;
+ margin: 3px;
+ text-decoration: none;
+}
+
+#pagination
+{
+	width: 100%;
+	margin-bottom:10px;
+	margin-top:10px;
+	margin-left:43%;
+	margin-right:30%;
 }
 
 
@@ -366,7 +420,7 @@ add browser prefixes**/
 -moz-transform: scale(2.5);  
 -webkit-transform: scale(2.5);  
 -o-transform: scale(2.5);  
-transform: scale(2.5);    
+transform: scale(1.8);    
 position:relative;      
 z-index:100;  
 }
@@ -380,16 +434,74 @@ give gallery's parent container a cursor: pointer.**/
 .DivName {cursor: pointer}
 }
 
+
+.img-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+	width:640px;
+    height:300px;
+    background-color: #fff;
+    border: 1px solid #a70000;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
 .thumbnail {
     display: inline-block;
     max-width: 100%;
     height: auto;
     padding: 4px;
     line-height: 1.42857143;
+	width:640px;
+    height:300px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #a70000;
     border-radius: 4px;
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
+#icon-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+	width:120px;
+    height:80px;
+    background-color: #fff;
+	opacity:0.7;
+    border: 1px solid #ddd;
+    border-radius: 117px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.price
+{
+	position:relative;
+	left:80%;
+	font-family:Montserrat-medium;
+	font-style:oblique;
+}
+
+.col-lg-4.col-md-5.col-xs-12 
+{
+	margin-bottom:20px;
+}
+
+#filter_search
+{
+	margin-bottom:15px;
+}
+
+
+
+

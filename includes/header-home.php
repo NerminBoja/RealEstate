@@ -19,11 +19,21 @@
         <li><a id="meni-font" href="apartmants.php">Apartmants</a></li> 
         <li><a id="meni-font" href="cities.php">Cities</a></li>
 		<li><a id="meni-font" href="services.php">Services</a></li>
+		<li> 
+			<?php
+				if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+					{
+						print print "<a id='meni-font' href='publishNews.php'>Publish</a>";
+					} 
+			?>
+		</li>
+		
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-		<li> <?php
+		<li> 
+		<?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-				       		print "<p>Dobrodošao/la</p>
+				       		print "<p>Welcome</p>
 									<form action='logout.php' method='post'>
 										<input type='submit' name='login' value='Log Out'></input> 
 									</form>";
@@ -37,10 +47,10 @@
 					<li><input id='first-name' type='text' name='firstname' placeholder='first name'></li>
 					<li><input id='last-name' type='text' name='lastname' placeholder='last name'></li>
 					<label id='lbl-birth-date' for='birth-date'>Date of bith:</label>
-					<li><input id='birth-date' type='date' name='birthday' value='1979-12-31'></li>
+					<li><input id='birth-date' type='date' name='birthday' value='1990-12-31'></li>
 					<li><input id='first-name' type='text' name='register-username' placeholder='username'></li>
 					<li><input id='first-name' type='password' name='register-password' placeholder='password'></li>
-					<li><input type='submit' name='register' value='Register'/></li>
+					<li><input type='submit' id='loginAndRegister-btn' name='register' value='Register'/></li>
 				</form>
 			  </ul>
 			    </div>
@@ -52,7 +62,7 @@
 				<form action='login.php' method='POST'>
 				<li><input id='username' type='text' name='username' placeholder='username'></li>
 				<li><input id='password' type='password' name='password' placeholder='password'></li>
-				<li><input type='submit' name='submit' value='Login'/></li>
+				<li><input id='loginAndRegister-btn' type='submit' name='submit' value='Login'/></li>
 				</form>
 			  </ul>
 			</div>
@@ -66,7 +76,7 @@
 </nav>
 
 </div>
-  <h1>Pravo mjesto za pravu nekretninu</h1>
+  <h1><a href="index.php"><img id="icon-thumbnail" src="https://images.designtrends.com/wp-content/uploads/2016/01/18050242/House-Sale-Agreement-Icon.png"></a>Best place for best real estate</h1>
 
 
 
@@ -129,7 +139,15 @@
 
             <div class="input-group" id="boot-search-box">
 
-                <input type="text" class="form-control" placeholder="Type a search term like: House in center of Sarajevo" />
+                <input type="text" class="form-control" 
+				placeholder="<?php if (isset($_GET['search']))
+								{if(!empty($_GET['chooseCity'])&& !empty($_GET['type'])&& !empty($_GET['size_m2'])&& !empty($_GET['rooms'])&& !empty($_GET['min_price'])&& !empty($_GET['max_price']))
+									{
+										echo "Type a search term like: House in center of Sarajevo";
+									} 
+								else echo "Fill out all of the fields!!!";
+								} 
+							else echo "Type a search term like: House in center of Sarajevo"; ?>" />
 
                 <div class="input-group-btn">
 
@@ -141,20 +159,42 @@
 
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
 
-                                <form class="form-horizontal" role="form">
+                                <form class="form-horizontal" action='index.php' method='get' role="form">
 
                                   <div class="form-group">
 
-                                    <select class="form-control">
+                                    <select class="form-control" name='chooseCity'>
 										<option hidden>Choose city:</option>
 
-                                        <option value="Sarajevo">Sarajevo</option>
+                                        
 
-                                        <option value="Zenica">Zenica</option>
+                                        <?php
+										
+											$con=mysqli_connect('localhost', 'root', 'root', 'realestatedb');
 
-                                        <option value="Tuzla">Tuzla</option>
+											if (mysqli_connect_errno())
+											  {
+											  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+											  }
+  
+  
 
-                                        <option value="Banja Luka">Banja Luka</option>
+										// querry for user
+
+											$result = mysqli_query($con,"select distinct city from houses") 
+															or die("Failed to query database".mysqli_error());
+
+
+
+
+											while($row = mysqli_fetch_assoc($result))
+											{
+											print"
+													<option name = ".$row['city'].">".$row['city']."</option>
+													";
+											}
+										
+										?>
 
                                     </select>
 
@@ -162,17 +202,14 @@
 									
 									<div class="form-group">
 
-                                    <select class="form-control">
+                                    <select class="form-control" name='type'>
 										<option hidden>Type:</option>
 
-                                        <option value="Sarajevo"></option>
+                                        <option value="houses">Houses</option>
 
-                                        <option value="Zenica"></option>
+                                        <option value="apartmants">Apartmants</option>
 
-                                        <option value="Tuzla"></option>
-
-                                        <option value="Banja Luka"></option>
-
+                                        <option value="studios">Studios</option>
                                     </select>
 
                                   </div>
@@ -181,30 +218,30 @@
                                  <div class="form-group">
 
                                 <div class="col-sm-6">
-									<input type="number" class="form-control" id="size-m2" placeholder="Size in m2"> <br/><br/>
+									<input type="number" class="form-control" name="size_m2" id="size-m2" min="0" max="500" placeholder="Size in m2"> <br/><br/>
 
-                                    <input type="number" class="form-control" id="rooms" placeholder="Rooms"><br/><br/>
-
+                                    <input type="number" class="form-control" name="rooms" id="rooms"  placeholder="Rooms"><br/><br/>
+									
                                 </div>
 								
 								<div class="col-sm-6">
 
-                                    <input type="number" class="form-control" id="min-price" placeholder="Min. price"><br/><br/>
+                                    <input type="number" class="form-control" name="min_price" id="min-price" placeholder="Min. price"><br/><br/>
 
-                                    <input type="number" class="form-control" id="max-price" placeholder="Max. price"> <br /><br />
+                                    <input type="number" class="form-control" name="max_price" id="max-price" placeholder="Max. price"> <br /><br />
                                 </div>
 
                                   <br /><br /><br /><br />                        
-
-                                  <button type="submit" class="btn btn-primary btn-block">Search: <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                </form>
+								<a href="/search/">
+                                  <button type="submit" name="search" class="btn btn-primary btn-block">Search: <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </a>
+								</form>
 
                             </div>
 
                         </div>
-
                         <button type="button" class="btn btn-success "><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-
+					
                     </div>
 
                 </div>

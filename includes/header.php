@@ -19,11 +19,19 @@
         <li><a id="meni-font" href="apartmants.php">Apartmants</a></li> 
         <li><a id="meni-font" href="cities.php">Cities</a></li>
 		<li><a id="meni-font" href="services.php">Services</a></li>
+		<li> 
+			<?php
+				if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+					{
+						print print "<a id='meni-font' href='publishNews.php'>Publish</a>";
+					} 
+			?>
+		</li>
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><?php
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-				       		print "<p>Dobrodošao/la</p>
+				       		print "<p>Welcome</p>
 									<form action='logout.php' method='post'>
 										<input type='submit' name='login' value='Log Out'></input> 
 									</form>";
@@ -40,7 +48,7 @@
 					<li><input id='birth-date' type='date' name='birthday' value='1979-12-31'></li>
 					<li><input id='first-name' type='text' name='register-username' placeholder='username'></li>
 					<li><input id='first-name' type='password' name='register-password' placeholder='password'></li>
-					<li><input type='submit' value='Register'/></li>
+					<li><input id='loginAndRegister-btn' type='submit' value='Register'/></li>
 				</form>
 			  </ul>
 			    </div>
@@ -52,7 +60,7 @@
 				<form action='login.php' method='POST'>
 				<li><input id='username' type='text' name='username' placeholder='username'></li>
 				<li><input id='password' type='password' name='password' placeholder='password'></li>
-				<li><input type='submit' name='login' value='Login'/></li>
+				<li><input id='loginAndRegister-btn' type='submit' name='login' value='Login'/></li>
 				</form>
 			  </ul>
 			</div>
@@ -64,5 +72,5 @@
 </nav>
 
 </div>
-  <h1>Pravo mjesto za pravu nekretninu</h1>
+  <h1><a href="index.php"><img id="icon-thumbnail" src="https://images.designtrends.com/wp-content/uploads/2016/01/18050242/House-Sale-Agreement-Icon.png"></a>Best place for best real estate</h1>
 </div>
